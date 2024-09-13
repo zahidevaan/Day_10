@@ -1,0 +1,296 @@
+@font-face {
+  font-family: "abu-akkas";
+  src: url(./fonts/Noirrit-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "abu-akkas";
+  font-style: normal;
+  text-decoration: none;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+}
+.header {
+  width: 100%;
+  position: relative;
+  background: #f2ffe2;
+}
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+.header-wrapper {
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo img {
+  width: 200px;
+  mix-blend-mode: darken;
+}
+.nav-menus {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .nav-menus {
+    display: none;
+  }
+}
+.menu-item {
+  font-size: 18px;
+  color: black;
+  font-weight: 600;
+  transition: color 0.3s linear;
+}
+.menu-item:hover {
+  color: red;
+}
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 600px) {
+  .nav-icons {
+    display: none;
+  }
+}
+.icon i {
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.hamburger {
+  display: none;
+}
+
+.hmaburger-icon {
+  font-size: 22px;
+  font-weight: 600;
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.3s linear;
+}
+@media (max-width: 600px) {
+  .hamburger {
+    display: inline-block;
+  }
+}
+.hmaburger-icon:hover {
+  color: red;
+}
+
+.mobile-menu-wrapper {
+  background: #000;
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: transform 0.4s linear;
+}
+
+.mobile-menus {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.mobile-menu-item {
+  width: 100%;
+  font-size: 18px;
+  color: white;
+  padding: 10px 25px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  font-weight: 600;
+}
+
+.mobile-menu-item::after {
+  content: "";
+  background-image: linear-gradient(#0055c5, #000000);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: -100%;
+  z-index: -1;
+  color: black;
+  transition: top 0.3s linear, left 0.4s linear;
+}
+
+/* .mobile-menu-item:hover {
+  color: black;
+} */
+.mobile-menu-item:hover::after {
+  top: 50%;
+  left: 0;
+}
+.close-btn {
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s linear;
+}
+.close-btn:hover {
+  color: red;
+}
+
+/* Hero Section Start Here */
+
+.row {
+  display: flex;
+  padding: 20px;
+}
+.col-left {
+  width: 50%;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background-image: url("./images/gun-750x400.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 25px;
+  box-sizing: border-box;
+  position: relative;
+}
+.content::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), #000000);
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.content h2 {
+  color: white;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+  font-weight: 400;
+  z-index: 2;
+  cursor: pointer;
+}
+.content p {
+  font-size: 14px;
+  font-weight: 200;
+  color: white;
+  z-index: 2;
+  margin-top: 10px;
+}
+.col-right {
+  width: 50%;
+}
+.right-content {
+  width: 100%;
+  height: 100%;
+  padding: 0 25px;
+}
+.right-row {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.right-row h2 {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.right-row p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px) {
+  .right-row {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .row {
+    flex-direction: column;
+  }
+  .col-left,
+  .col-right {
+    width: 100%;
+  }
+  .right-content,
+  .content {
+    height: 400px;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  .content {
+    padding: 15px;
+  }
+  .right-row {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.blog-section {
+  padding: 30px 0;
+}
+.blog-row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.single-blog {
+  width: calc(100% / 4);
+}
+.single-blog-wrapper {
+  margin: 15px;
+}
+.single-blog-wrapper h3 {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .single-blog {
+    width: calc(100% / 3);
+  }
+}
+@media (max-width: 768px) {
+  .single-blog {
+    width: calc(100% / 2);
+  }
+}
+@media (max-width: 600px) {
+  .single-blog {
+    width: calc(100% / 1);
+  }
+}
